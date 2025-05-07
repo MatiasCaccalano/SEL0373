@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 const animalSchema = new mongoose.Schema({
     id_animal: {
@@ -47,9 +48,9 @@ const medicaoSchema = new mongoose.Schema({
         required: true
     },
     sensor: {
-        type: Number,
+        type: Schema.Types.ObjectId,
         ref: 'sensor'
-    }
+    },
     //conecta a medicao a um sensor pelo populate
     
 },{
